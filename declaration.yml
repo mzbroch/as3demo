@@ -22,7 +22,7 @@ declaration:
         class: Monitor
         monitorType: tcp
         send: "GET / HTTP/1.1\r\nHost: networktocode.com"
-        receive: 200
+        receive: "200 OK"
       web_pool:
         class: Pool
         monitors:
