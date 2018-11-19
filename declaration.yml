@@ -5,25 +5,30 @@ persist: true
 declaration:
   class: ADC
   schemaVersion: 3.0.0
-  id: NTC-id-1
-  label: Sample 1
+  id: NTC-ID-2018111801
+  label: NTC Demo
   remark: Simple HTTP Service with Round-Robin Load Balancing
   NTC_Tenant:
     class: Tenant
-    A1:
+    NTC_Application:
       class: Application
       template: http
       serviceMain:
         class: Service_HTTP
         virtualAddresses:
-        - 10.0.1.10
+          - 10.10.10.10
         pool: web_pool
+      ntc_monitor:
+        class: Monitor
+        monitorType: tcp
+        send: GET / HTTP/1.1\r\nHost: networktocode.com
       web_pool:
         class: Pool
         monitors:
-        - http
+         - http
+         - ntc_monitor
         members:
         - servicePort: 80
           serverAddresses:
-          - 192.0.1.30
-          - 192.0.1.40
+            - 192.0.2.30
+            - 192.0.2.40
