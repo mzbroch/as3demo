@@ -16,7 +16,7 @@ declaration:
       serviceMain:
         class: Service_HTTP
         virtualAddresses:
-          - 10.10.10.10
+        - 10.10.10.10
         pool: web_pool
       ntc_monitor:
         class: Monitor
@@ -25,10 +25,10 @@ declaration:
       web_pool:
         class: Pool
         monitors:
-         - http
-         - ntc_monitor
+        - http
+        - ntc_monitor
         members:
         - servicePort: 80
           serverAddresses:
-            - 192.0.2.30
-            - 192.0.2.40
+          - 192.0.2.30
+          - 192.0.2.40
