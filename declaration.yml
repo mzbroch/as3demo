@@ -25,5 +25,5 @@ declaration:
         members:
         - servicePort: 80
           serverAddresses:
-          - 192.0.1.20
           - 192.0.1.30
+          - 192.0.1.40
