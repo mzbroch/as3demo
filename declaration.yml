@@ -18,15 +18,10 @@ declaration:
         virtualAddresses:
         - 10.10.10.10
         pool: web_pool
-      ntc_monitor:
-        class: Monitor
-        monitorType: tcp
-        send: GET / HTTP/1.1\r\nHost: networktocode.com
       web_pool:
         class: Pool
         monitors:
         - http
-        - ntc_monitor
         members:
         - servicePort: 80
           serverAddresses:
