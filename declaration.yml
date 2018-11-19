@@ -22,10 +22,12 @@ declaration:
         class: Monitor
         monitorType: tcp
         send: "GET / HTTP/1.1\r\nHost: networktocode.com"
+        receive: 200
       web_pool:
         class: Pool
         monitors:
         - http
+        - ntc_monitor
         members:
         - servicePort: 80
           serverAddresses:
