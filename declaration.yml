@@ -8,6 +8,7 @@ declaration:
   id: NTC-id-1
   label: Sample 1
   remark: Simple HTTP Service with Round-Robin Load Balancing
+  updateMode: complete
   NTC_Tenant:
     class: Tenant
     A1:
