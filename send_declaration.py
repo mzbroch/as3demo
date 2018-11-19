@@ -27,6 +27,8 @@ class ApiWrapper(object):
                                  auth=(self.api_username, self.api_password),
                                  headers=headers, data=payload, verify=False)
 
+        print response
+
         response.raise_for_status()
 
         return response
