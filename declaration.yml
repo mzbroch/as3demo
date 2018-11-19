@@ -26,7 +26,6 @@ declaration:
       web_pool:
         class: Pool
         monitors:
-        - http
         - ntc_monitor
         members:
         - servicePort: 80
