@@ -20,7 +20,7 @@ declaration:
         pool: web_pool
       ntc_monitor:
         class: Monitor
-        monitorType: tcp
+        monitorType: http
         send: "GET / HTTP/1.1\r\nHost: networktocode.com"
         receive: 200
       web_pool:
