@@ -68,7 +68,6 @@ def main():
     ###
     if int(os.environ.get('DRYRUN', 0)) == 1:
         declaration_data['action'] = 'dry-run'
-        print("dryrun == 1")
 
     ###
     #   Send the declaration
