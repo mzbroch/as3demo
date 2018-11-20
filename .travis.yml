@@ -10,7 +10,8 @@ python:
 jobs:
   include:
     - stage: SendDeclaration
-      if: branch = master
+      if: branch = master AND \
+          type = push
       env: DRYRUN=1
       script:
         - python send_declaration.py
