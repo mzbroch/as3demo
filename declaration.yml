@@ -31,4 +31,4 @@ declaration:
         - servicePort: 80
           serverAddresses:
           - 192.0.2.90
-          - 192.0.2.91
+          - 192.0.2.911
