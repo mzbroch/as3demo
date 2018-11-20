@@ -11,5 +11,6 @@ jobs:
   include:
     - stage: SendDeclaration
       if: branch = master
+      env: DRYRUN=1
       script:
         - python send_declaration.py

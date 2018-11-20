@@ -49,14 +49,30 @@ class F5Handler(object):
 
 
 def main():
+    ###
+    #   Initialize F5 Handler
+    ###
     f5_device = F5Handler(
         f5_address='https://{}:8443/'.format(os.environ.get('IPADDR')),
         api_username='admin',
         api_password=os.environ.get('PASSWORD'))
 
+    ###
+    #   Read declared configuration
+    ###
     with open('declaration.yml') as yml:
         declaration_data = yaml.load(yml)
 
+    ###
+    #   Switch to dry-run mode if needed
+    ###
+    if int(os.environ.get('DRYRUN', 0)) == 1:
+        declaration_data['action'] = 'dry-run'
+        print("dryrun == 1")
+
+    ###
+    #   Send the declaration
+    ###
     f5_device.send_declaration(declaration_data)
 
 
