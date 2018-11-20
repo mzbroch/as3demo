@@ -9,10 +9,17 @@ python:
 
 jobs:
   include:
-    - stage: SendDeclaration
+    - stage: Test_Declaration
+      if: |
+        branch = master AND \
+        type = pull_request
+      env: DRYRUN=1
+      script:
+        - python send_declaration.py
+
+    - stage: Send_Declaration
       if: |
         branch = master AND \
         type = push
-      env: DRYRUN=1
       script:
         - python send_declaration.py
