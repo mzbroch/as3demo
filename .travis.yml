@@ -10,6 +10,6 @@ python:
 jobs:
   include:
     - stage: SendDeclaration
+      if: branch = master
       script:
         - python send_declaration.py
- 
