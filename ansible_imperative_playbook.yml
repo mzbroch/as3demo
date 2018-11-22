@@ -1,0 +1,37 @@
+- name: Set multiple monitors (at least 1 must succeed)
+  bigip_pool:
+    server: lb.mydomain.com
+    user: admin
+    password: secret
+    state: present
+    name: my-pool
+    partition: Common
+    monitor_type: m_of_n
+    quorum: 1
+    monitors:
+      - http
+      - tcp
+  delegate_to: localhost
+
+- name: Remove pool member from pool
+  bigip_pool_member:
+    server: lb.mydomain.com
+    user: admin
+    password: secret
+    state: absent
+    pool: my-pool
+    partition: Common
+    host: "{{ ansible_default_ipv4['address'] }}"
+    port: 80
+  delegate_to: localhost
+
+- name: Delete pool
+  bigip_pool:
+    server: lb.mydomain.com
+    user: admin
+    password: secret
+    state: absent
+    name: my-pool
+    partition: Common
+  delegate_to: localhost
+  
