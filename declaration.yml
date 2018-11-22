@@ -13,7 +13,7 @@ declaration:
     NTC_Application:
       class: Application
       template: http
-      NTC_Virtual_Server:
+      serviceMain:
         class: Service_HTTP
         virtualAddresses:
         - 10.10.10.10
