@@ -34,4 +34,3 @@
     name: my-pool
     partition: Common
   delegate_to: localhost
-  
