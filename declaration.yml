@@ -30,7 +30,6 @@ declaration:
         members:
         - servicePort: 80
           serverAddresses:
-          - 192.0.2.90
           - 192.0.2.92
-          - 192.0.0.93
-
+          - 192.0.2.93
+          - 192.0.2.94
