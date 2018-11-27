@@ -32,3 +32,4 @@ declaration:
           serverAddresses:
           - 192.0.2.92
           - 192.0.2.93
+          - 192.0.0.99
